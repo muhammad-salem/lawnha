@@ -2,6 +2,7 @@ package org.terminal.ansi;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 
 public interface ANSI 
 		extends DeviceStatus, 
@@ -13,7 +14,8 @@ public interface ANSI
 				ErasingText,
 				Printing,
 				DefineKey,
-				DisplayAttributes{
+				DisplayAttr
+{
 	
 	default int[] getCursorPosition() throws Exception {
 		
@@ -30,6 +32,28 @@ public interface ANSI
 		System.out.print( EraseEndofLine );
 		
 		return extractReportCursorPosition(temp);
+	}
+	
+default int[] getCursorPositionP() throws Exception {
+		
+//		System.out.print( SaveCursor);
+		System.out.print( QueryCursorPosition);
+		byte[] b = new byte[20];
+		Thread.sleep(100);
+		System.out.println(CursorBackward + 'R');
+		int x = System.in.read(b);
+		String temp = new String(b, 0, x);
+		System.out.print(CursorBackward(x));
+		System.out.print(CursorUp);
+		System.out.print( EraseEndofLine );
+		
+		return extractReportCursorPosition(temp);
+	}
+	
+	public static void main(String[] args) throws Exception {
+		ANSI ansi = new ANSI() {
+		};
+		System.out.println("cursor pos: " + Arrays.toString(ansi.getCursorPositionP()));
 	}
 	
 	

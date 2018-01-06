@@ -19,9 +19,16 @@ public interface CursorControl {
 	 * "\u001B[{ROW};{COLUMN}H"
 	 */
     default String CursorHome(int ROW, int COLUMN) { return "\u001B["+ROW+';'+COLUMN+'H'; }
-    String CursorCol0 = "\u001B[;0H";
-    String CursorRaw0 = "\u001B[0;H";
+//    String CursorCol0 = "\u001B[;0H";
+    String CursorColumn = "\u001B[1G";
+    String CursorRaw = "\u001B[0;H";
     
+    /**
+     * moves cursor to column n
+     * @param col number of column
+     * @return 
+     */
+    default String CursorColumn(int col) { return "\u001B["+col+'G'; }
     /**
      * Moves the cursor up by 1 row.
      */
@@ -77,6 +84,22 @@ public interface CursorControl {
      */
     default String ForceCursorPosition(int row, int column){return "\u001B["+row+';'+column+'f';}
     
+    
+    String CursorNextLine = "\\u001b[1E";
+    /**
+     * moves cursor to beginning of line n lines down
+     * @param n
+     * @return
+     */
+    default String CursorNextLine(int n){ return "\u001B["+n+"E";}
+    
+    String CursorPrevLine = "\\u001b[1F";
+    /**
+     *  moves cursor to beginning of line n lines down
+     * @param n
+     * @return
+     */
+    default String CursorPrevLine(int n){ return "\u001B["+n+"F";}
     
     /**
      * Save current cursor position. 
