@@ -18,8 +18,8 @@ public interface ANSI
 		  String summery = "";
 		  ANSI ansi = new ANSI(){};
 		  summery += ansi.Yellow("HelloY ");
-		  summery += ansi.Blue("WorldB ");
-		  summery += ansi.Greenbg("\ttry green background");
+		  summery += ANSI.Blue("WorldB ");
+		  summery += ANSI.Greenbg("\ttry green background");
 		  System.out.println(summery);
 	}
 		

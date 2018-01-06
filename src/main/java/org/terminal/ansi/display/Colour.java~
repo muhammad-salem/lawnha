@@ -32,9 +32,6 @@ public enum Colour {
 		return code;
 	}
 	
-	public int getCodebg() {
-		return codebg;
-	}
 	
 	@Override
 	public String toString() {
