@@ -27,7 +27,7 @@ public enum Attribute {
 	Framed(51),
 	Ncircled(52),
 	Overlined(53),
-	NotframedOrEncircled(54),
+	NotFramedOrEncircled(54),
 	NotOverLined(55),
 	
 	IdeogramRightSideLine(60),

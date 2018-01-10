@@ -1,5 +1,5 @@
 # ANSI/VT100 for Java 
-=====================
+
 Add ansi code to your output
 ----------------------------
 

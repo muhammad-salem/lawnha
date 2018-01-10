@@ -2,9 +2,49 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>terminal</groupId>
   <artifactId>org.terminal.ansi</artifactId>
-  <version>0.1.3</version>
-  <name>Terminal ANSI</name>
+  <version>0.1.6</version>
+  <name>ANSI/VT100 for Java</name>
   <description>add ansi code to your output</description>
+  
+  
+	<url>https://github.com/salemebo/Java-Terminal-ANSI-VT100</url>
+	<organization>
+		<url>https://github.com/salemebo</url>
+		<name>JSalem ,Inc.</name>
+	</organization>
+	<scm>
+		<url>https://github.com/salemebo/Java-Terminal-ANSI-VT100.git</url>
+		<connection>scm:git:https://github.com/salemebo/Java-Terminal-ANSI-VT100.git</connection>
+		<developerConnection>scm:git:https://github.com/salemebo/Java-Terminal-ANSI-VT100.git</developerConnection>
+		<tag>ansi, 100, VT100, vt, ansi/vt100, ANSI</tag>
+	</scm>
+	
+	<developers>
+		<developer>
+			<id>salem</id>
+			<name>Mohammed Salem</name>
+			<email>salem.ebo@gmail.com</email>
+			<url>https://github.com/salemebo</url>
+			<organization>JSalem,Inc.</organization>
+			<organizationUrl>https://github.com/salemebo</organizationUrl>
+			<roles>
+			  <role>architect</role>
+			  <role>developer</role>
+			</roles>
+			<timezone>+2</timezone>
+		</developer>
+	</developers>
+  
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+    
     <build>
 	    <plugins>
 	        <plugin>

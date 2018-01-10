@@ -85,7 +85,7 @@ public interface CursorControl {
     default String ForceCursorPosition(int row, int column){return "\u001B["+row+';'+column+'f';}
     
     
-    String CursorNextLine = "\\u001b[1E";
+    String CursorNextLine = "\u001b[1E";
     /**
      * moves cursor to beginning of line n lines down
      * @param n
@@ -93,7 +93,7 @@ public interface CursorControl {
      */
     default String CursorNextLine(int n){ return "\u001B["+n+"E";}
     
-    String CursorPrevLine = "\\u001b[1F";
+    String CursorPrevLine = "\u001b[1F";
     /**
      *  moves cursor to beginning of line n lines down
      * @param n
@@ -117,5 +117,49 @@ public interface CursorControl {
      * Restores cursor position after a Save Cursor. 
      */
     String RestoreCursorAttrs =	"\u001B[8";
+    
+    /**
+     * do nothing 
+     * @param string
+     * @return string
+     */
+    default String CursorLineLast(String string) {
+    	// do nothing =D
+    	return string;
+    }
+    
+    /**
+     * save the cursor position in the begin of string
+     * @param string don't have '\n' "new line char"
+     * @return a representing string plus the given input string
+     */
+    default String SaveCursor(String string) {
+    	return SaveCursor + string + UnsaveCursor;
+    }
+    
+    /**
+     * will check for number on '\n' in code 
+     * if the string terminated by new line... will remove 
+     * @param string
+     * @return
+     */
+    default String CursorFirst(final String string) {
+    	return CursorFirst(string, 0); 
+    }
+    
+    
+    
+    /**
+     * Previous 
+     * @param string
+     * @param previousCharLength length of the written char in the current line
+     * @return
+     */
+    default String CursorFirst(final String string, int previousCharLength) {
+    	String[] lines = string.split("\n");
+    	int i = string.charAt(string.length()-1) == '\n' ? 1 : 0;
+    	return string + CursorPrevLine(lines.length-1 + i) + CursorForward(previousCharLength);
+    	
+    }
 
 }

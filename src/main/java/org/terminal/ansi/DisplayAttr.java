@@ -96,7 +96,7 @@ public interface DisplayAttr extends Colours{
 	String Framed = Attribute.Framed.toString();
 	String Ncircled = Attribute.Ncircled.toString();
 	String Overlined = Attribute.Overlined.toString();
-	String NotframedOrEncircled = Attribute.NotframedOrEncircled.toString();
+	String NotFramedOrEncircled = Attribute.NotFramedOrEncircled.toString();
 	String NotOverLined = Attribute.NotOverLined.toString();
 	
 	String IdeogramRightSideLine = Attribute.IdeogramRightSideLine.toString();

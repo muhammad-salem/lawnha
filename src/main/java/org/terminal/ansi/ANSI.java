@@ -14,13 +14,6 @@ public interface ANSI
 				DisplayAttr
 {
 	
-	public static void main(String ... args) throws Exception {
-		  String summery = "";
-		  ANSI ansi = new ANSI(){};
-		  summery += ansi.Yellow("HelloY ");
-		  summery += ansi.Blue("WorldB ");
-		  summery += ansi.Greenbg("\ttry green background");
-		  System.out.println(summery);
-	}
+	
 		
 }

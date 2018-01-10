@@ -167,4 +167,88 @@ public interface Colours{
 	default String DefaultBackgroundColor(String string) {
 	    return Colourbg(string, Colour.Default);
 	}
+	
+	
+	
+	//////////////////////
+	
+	String Gray = Colour.Gray.color();
+	default String Gray(String string) {
+		return Colour(string, Colour.Gray);
+	}
+	
+	String Graybg = Colour.Gray.colorbg();
+	default String Graybg(String string) {
+	    return 	Colourbg(string, Colour.Gray);
+	}
+	
+	String RedLight = Colour.RedLight.color();
+	default String RedLight(String string) {
+		return  Colour(string, Colour.RedLight);
+	}
+	
+	String RedLightbg = Colour.RedLight.colorbg();
+	default String RedLightbg(String string) {
+	    return Colourbg(string, Colour.RedLight);
+	}
+	
+	String GreenLight = Colour.GreenLight.color();
+	default String GreenLight(String string) {
+		return Colour(string, Colour.GreenLight);
+	}
+	
+	String GreenLightbg = Colour.GreenLight.colorbg();
+	default String GreenLightbg(String string) {
+	    return Colourbg(string, Colour.GreenLight);
+	}
+	
+	String YellowLight = Colour.YellowLight.color();
+	default String YellowLight(String string) {
+		return Colour(string, Colour.YellowLight);
+	}
+	
+	String YellowLightbg = Colour.YellowLight.colorbg();
+	default String YellowLightbg(String string) {
+	    return Colourbg(string, Colour.YellowLight);
+	}
+	
+	String BlueLight = Colour.BlueLight.color();
+	default String BlueLight(String string) {
+		return Colour(string, Colour.BlueLight);
+	}
+	
+	String BlueLightbg = Colour.BlueLight.colorbg();
+	default String BlueLightbg(String string) {
+	    return Colourbg(string, Colour.BlueLight);
+	}
+	
+	String MagentaLight = Colour.MagentaLight.color();
+	default String MagentaLight(String string) {
+		return Colour(string, Colour.MagentaLight);
+	}
+	
+	String MagentaLightbg = Colour.MagentaLight.colorbg();
+	default String MagentaLightbg(String string) {
+	    return Colourbg(string, Colour.MagentaLight);
+	}
+	
+	String CyanLight = Colour.CyanLight.color();
+	default String CyanLight(String string) {
+		return Colour(string, Colour.CyanLight);
+	}
+	
+	String CyanLightnbg = Colour.CyanLight.colorbg();
+	default String CyanLightbg(String string) {
+	    return Colourbg(string, Colour.CyanLight);
+	}
+	String GrayLight = Colour.GrayLight.color();
+	default String GrayLight(String string) {
+		return Colour(string, Colour.GrayLight);
+	}
+	
+	String GrayLightbg = Colour.GrayLight.colorbg();
+	default String GrayLightbg(String string) {
+	    return Colourbg(string, Colour.GrayLight);
+	}
+	
 }
