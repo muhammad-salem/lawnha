@@ -1,4 +1,4 @@
-# ANSI/VT100 for Java (0.1.6)
+# ANSI/VT100 for Java (0.1.8)
 
 Add ansi code to your output
 ----------------------------
@@ -6,7 +6,7 @@ Add ansi code to your output
 ```java
 	public static void main(String ... args) throws Exception {
 		  String summery = "";
-		  ANSI ansi = new ANSI(){};
+		  Ansi ansi = new Ansi(){};
 		  summery += ansi.Yellow("HelloY ");
 		  summery += ansi.Blue("WorldB ");
 		  summery += ansi.Greenbg("\ttry green background");
@@ -27,24 +27,24 @@ print footer from as of 3-line
 
 
   summery += "\r ";
-  summery += ANSI.Yellow;
+  summery += Ansi.Yellow;
   summery += "Hello ";
-  summery += ANSI.ResetAllAttributes;
+  summery += Ansi.ResetAllAttributes;
 
-  summery += ANSI.Blue;
+  summery += Ansi.Blue;
   summery += "World!";
-  summery += ANSI.ResetAllAttributes;
+  summery += Ansi.ResetAllAttributes;
 
-  summery += ANSI.Green;
+  summery += Ansi.Green;
   summery += "\t Tray ANSI code in Java";
-  summery += ANSI.ResetAllAttributes;
+  summery += Ansi.ResetAllAttributes;
 
 
-  summery += ANSI.UnsaveCursor;
-  summery += ANSI.CursorUp;
-  summery += ANSI.EraseLine;
-  summery += ANSI.CursorUp;
-  summery += ANSI.EraseLine;
+  summery += Ansi.UnsaveCursor;
+  summery += Ansi.CursorUp;
+  summery += Ansi.EraseLine;
+  summery += Ansi.CursorUp;
+  summery += Ansi.EraseLine;
   
   System.out.print(summery);
 
