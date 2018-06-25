@@ -1,4 +1,4 @@
-# ANSI/VT100 for Java 
+# ANSI/VT100 for Java (0.1.6)
 
 Add ansi code to your output
 ----------------------------
