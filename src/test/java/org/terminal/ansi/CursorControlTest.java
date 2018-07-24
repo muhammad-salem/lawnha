@@ -8,12 +8,12 @@ public class CursorControlTest {
 		CursorControl cursor = new CursorControl() {};
 		String str = "foo:fooo:foo";
 		System.out.println(str);
-		System.out.print(cursor.CursorFirst("!no good\n hi three\n\n\n\n\n\n\n\n\n\n\n\n.hi gain"));
+		System.out.print(cursor.cursorFirst("!no good\n hi three\n\n\n\n\n\n\n\n\n\n\n\n.hi gain"));
 		
 		
 		
 		System.out.print(str);
-		System.out.print(cursor.CursorFirst("!string\nline 2\nline 3\n", str.length()));
+		System.out.print(cursor.cursorFirst("!string\nline 2\nline 3\n", str.length()));
 		Thread.sleep(3000);
 //		System.out.println();
 	}

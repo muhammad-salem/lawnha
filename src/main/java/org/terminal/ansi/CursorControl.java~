@@ -1,7 +1,5 @@
 package org.terminal.ansi;
 
-import java.util.Arrays;
-
 public interface CursorControl extends AnsiBase{
 	
 	/**
@@ -96,7 +94,7 @@ public interface CursorControl extends AnsiBase{
      * @return
      */
     default String cursorNextLine(int count){ return escape_sequences + count + 'E';}
-    default String newln(int count) {return chars('\n', count);}
+    default String newln(return chars('\n', count);}
     default String chars(char c, int count){ char[] cs = new char[count]; Arrays.fill(cs, '\n'); return new String(cs);}
     
     final String CursorPrevLine = escape_sequences + "1F";

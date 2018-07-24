@@ -1,14 +1,14 @@
 package org.terminal.ansi;
 
-public interface DefineKey {
+public interface DefineKey extends AnsiBase{
 	
 	/**
 	 * Associates a string of text to a keyboard key. 
 	 * {key} indicates the key by its ASCII value in decimal
 	 */
 	
-	default String SetKeyDefinition(int keyASCII, String string) {
-		return "\u001B["+keyASCII + ';'+ string+'p';
+	default String SetKeyDefinition(int asciiKey, String string) {
+		return escape_sequences + asciiKey + ';' + string + 'p';
 	}
 
 }
