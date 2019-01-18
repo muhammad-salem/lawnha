@@ -97,7 +97,7 @@ public interface CursorControl extends AnsiBase{
      */
     default String cursorNextLine(int count){ return escape_sequences + count + 'E';}
     default String newln(int count) {return chars('\n', count);}
-    default String chars(char c, int count){ char[] cs = new char[count]; Arrays.fill(cs, '\n'); return new String(cs);}
+    default String chars(char c, int count){ char[] cs = new char[count]; Arrays.fill(cs, c); return new String(cs);}
     
     final String CursorPrevLine = escape_sequences + "1F";
     /**

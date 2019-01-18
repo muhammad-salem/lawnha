@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.terminal</groupId>
 	<artifactId>ansi</artifactId>
-	<version>0.1.95</version>
+	<version>0.1.96</version>
 	<name>ANSI/VT100 for Java</name>
 	<description>add ansi code to your output</description>
 
@@ -52,6 +52,7 @@
 			<groupId>org.fusesource.jansi</groupId>
 			<artifactId>jansi</artifactId>
 			<version>1.17.1</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
