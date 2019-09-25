@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.terminal</groupId>
 	<artifactId>ansi</artifactId>
-	<version>0.1.96</version>
+	<version>0.1.98</version>
 	<name>ANSI/VT100 for Java</name>
 	<description>add ansi code to your output</description>
 
@@ -46,14 +46,78 @@
 	</licenses>
 	<properties>
 		<main.class>org.terminal.Ansi</main.class>
+		<jansi-native-version>1.8</jansi-native-version>
 	</properties>
 	<dependencies>
+		<!--<dependency>-->
+			<!--<groupId>org.fusesource.jansi</groupId>-->
+			<!--<artifactId>jansi</artifactId>-->
+			<!--<version>1.17.1</version>-->
+			<!--<scope>compile</scope>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna-platform</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fusesource.hawtjni</groupId>
+			<artifactId>hawtjni-runtime</artifactId>
+			<version>1.16</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.fusesource.jansi</groupId>
-			<artifactId>jansi</artifactId>
-			<version>1.17.1</version>
-			<scope>compile</scope>
+			<artifactId>jansi-native</artifactId>
+			<version>${jansi-native-version}</version>
 		</dependency>
+
+		<!-- Bundle in the native libs for Windows, OS X, and
+             Linux out of the box since those are the most popular
+             platforms -->
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi-windows32</artifactId>
+			<version>${jansi-native-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi-windows64</artifactId>
+			<version>${jansi-native-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi-osx</artifactId>
+			<version>${jansi-native-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi-linux32</artifactId>
+			<version>${jansi-native-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi-linux64</artifactId>
+			<version>${jansi-native-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi-freebsd32</artifactId>
+			<version>${jansi-native-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource.jansi</groupId>
+			<artifactId>jansi-freebsd64</artifactId>
+			<version>${jansi-native-version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

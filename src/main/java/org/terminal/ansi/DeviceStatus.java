@@ -27,7 +27,7 @@ public interface DeviceStatus extends AnsiBase{
      * @return the code as string format
      */
     default String getReportDeviceCodeStr(String report){
-        return report.substring(2, report.indexOf("0c"));
+        return report.substring(report.indexOf('[')+1, report.indexOf('c'));
     }
     /**
      * extract the code from a ReportDeviceCode 
@@ -74,7 +74,7 @@ public interface DeviceStatus extends AnsiBase{
      */
     default int[] extractReportCursorPosition(String report){
         int[] pos = new int[2];
-        String row = report.substring(2, report.indexOf(';'));
+        String row = report.substring(report.indexOf('[')+1, report.indexOf(';'));
         String column = report.substring( report.indexOf(';')+1, report.indexOf('R'));
         pos[0] = Integer.parseInt(row);
         pos[1] = Integer.parseInt(column);

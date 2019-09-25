@@ -1,4 +1,4 @@
-# ANSI/VT100 for Java (0.1.96)
+# ANSI/VT100 for Java (0.1.98)
 
 
 Control Sequences (defined by ANSI X3.64-1979)

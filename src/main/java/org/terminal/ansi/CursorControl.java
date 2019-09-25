@@ -29,7 +29,7 @@ public interface CursorControl extends AnsiBase{
     
     /**
      * moves cursor to column n
-     * @param col number of column
+     * @param column number of column
      * @return 
      */
     default String cursorColumn(int column) { return escape_sequences + column + 'G'; }
@@ -92,7 +92,7 @@ public interface CursorControl extends AnsiBase{
     final String CursorNextLine = escape_sequences + "1E";
     /**
      * moves cursor to beginning of line n lines down
-     * @param n
+     * @param count
      * @return
      */
     default String cursorNextLine(int count){ return escape_sequences + count + 'E';}
@@ -102,7 +102,7 @@ public interface CursorControl extends AnsiBase{
     final String CursorPrevLine = escape_sequences + "1F";
     /**
      *  moves cursor to beginning of line n lines down
-     * @param n
+     * @param count
      * @return
      */
     default String cursorPrevLine(int count){ return escape_sequences + count + 'F';}
@@ -114,7 +114,7 @@ public interface CursorControl extends AnsiBase{
     /**
      * Restores cursor position after a Save Cursor. 
      */
-    final String UnsaveCursor =	escape_sequences + 'u';
+    final String UnSaveCursor =	escape_sequences + 'u';
     /**
      * Save current cursor position. 
      */
@@ -140,7 +140,7 @@ public interface CursorControl extends AnsiBase{
      * @return a representing string plus the given input string
      */
     default String saveCursor(String string) {
-    	return SaveCursor + string + UnsaveCursor;
+    	return SaveCursor + string + UnSaveCursor;
     }
     
     /**
