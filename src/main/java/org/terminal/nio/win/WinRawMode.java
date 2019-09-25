@@ -24,7 +24,12 @@ public class WinRawMode {
 	private static void registerShutdownHook() {
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			public void run() {
-				resetConsoleModeWindows();
+				try{
+					resetConsoleModeWindows();
+				} catch (IOException e){
+					e.printStackTrace();
+				}
+				
 			}
 		});
 	}
