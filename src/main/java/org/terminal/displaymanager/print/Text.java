@@ -5,7 +5,7 @@ import org.terminal.displaymanager.coordinate.Pos;
 /**
  * hold text / string, should have length limit. 
  * also had position info (x,y). 
- * dicide the way to display string 
+ * decide the way to display string 
  * 
  * @author Mohammed Salem
  *

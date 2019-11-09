@@ -1,6 +1,6 @@
 package org.terminal.strings;
 
-public class AnsiStringBuilder extends StyleBuilder{
+public class AnsiStringBuilder extends StyleBuilder {
 	
 	protected StringBuilder builder;
 	protected StringBuilder holderAnsi;

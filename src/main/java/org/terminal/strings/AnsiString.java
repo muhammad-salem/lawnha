@@ -18,22 +18,19 @@ public class AnsiString extends StyleBuilder implements CharSequence, Appendable
 			@Override
 			public String toString() {
 				Iterator<Character> it = iterator();
-		        if (! it.hasNext())
-		            return "";
-
-		        StringBuilder sb = new StringBuilder();
-		        for (;;) {
-		        	Character e = it.next();
-		            sb.append(e);
-		            if (! it.hasNext())
-		                return sb.toString();
+		        if (! it.hasNext()) {
+		        	return "";
 		        }
+		        StringBuilder sb = new StringBuilder(this.size());
+		        while(it.hasNext()){
+		            sb.append(it.next());
+		        }
+		        return sb.toString();
 			}
 		};
 		for (int i = 0; i < chars.length; i++) {
 			characters.add(chars[i]);
 		}
-		characters.addAll(characters);
 	}
 
 	public AnsiString(String string) {
