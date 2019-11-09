@@ -1,75 +1,61 @@
 package org.terminal;
 
-import java.util.Random;
-
 import org.junit.Test;
-import org.terminal.beans.RowPosition;
-import org.terminal.beans.TableThemes;
-import org.terminal.strings.StyleBuilder;
-import org.terminal.ui.unit.Cell;
-import org.terminal.ui.unit.Row;
-
+import org.terminal.strings.AnsiStringBuilder;
 
 public class AnsiTest {
-	
-	public static String getRandomString() {
-		  
-	    int leftLimit = 97; // letter 'a'
-	    int rightLimit = 122; // letter 'z'
-	    int targetStringLength = 10;
-	    Random random = new Random();
-	    StringBuilder buffer = new StringBuilder(targetStringLength);
-	    for (int i = 0; i < targetStringLength; i++) {
-	        int randomLimitedInt = leftLimit + (int) 
-	          (random.nextFloat() * (rightLimit - leftLimit + 1));
-	        buffer.append((char) randomLimitedInt);
-	    }
-	    return buffer.toString();
-	}
-	public Cell<String> getNewCell() {
-		return new Cell<String>(getRandomString());
-	}
-	
-	public Row<String> getNewRow() {
-		Row<String> row = new Row<String>();
-		row.add(getNewCell());
-		row.add(getNewCell());
-		row.add(getNewCell());
-		row.add(getNewCell());
-		return row;
-	}
-	
+
 
 	@Test
-	public void testAnsi() throws Exception {
-		
-		Cell<String> cell = new Cell<String>(4,5, "cell\nnew line\n3'th line");
-		
-		Row<String> row = new Row<>();
+	public void simpleTest1() {
+		String summary = "";
+		Ansi ansi = new Ansi() {};
+		summary += ansi.yellow("Hello ");
+		summary += ansi.blue("World ");
+		summary += ansi.greenbg("\ttry green background");
+		System.out.println(summary);
+	}
 
+	@Test
+	public void simpleTest2() {
+		String summary = "";
+		summary += Ansi.EraseLine + "\n";
+		summary += Ansi.EraseLine + "\n";
+		summary += Ansi.EraseLine + Ansi.SaveCursor;
 
-		StyleBuilder headStyle = new StyleBuilder();
-		StyleBuilder dataStyle = new StyleBuilder();
-		StyleBuilder borderStyle = new StyleBuilder();
+		summary += "\r ";
+		summary += Ansi.Yellow;
+		summary += "Hello ";
+		summary += Ansi.Reset;
 
-		headStyle.redLite();
-		borderStyle.blue();
-		dataStyle.magenta();
+		summary += Ansi.Blue;
+		summary += "World!";
+		summary += Ansi.Reset;
 
-		row.add(cell);
-		System.out.println(row.toString(TableThemes.DEFAULT_THEME, dataStyle, borderStyle, RowPosition.TABLE));
+		summary += Ansi.Green;
+		summary += "\ttry ANSI code with Java";
+		summary += Ansi.Reset;
 
-		StringBuilder b = new StringBuilder();
-		b.append(getNewRow().toString(TableThemes.DEFAULT_THEME, headStyle, borderStyle, RowPosition.HEAD));
-		b.append(getNewRow().toString(TableThemes.DEFAULT_THEME, dataStyle, borderStyle, RowPosition.MID));
-		b.append(getNewRow().toString(TableThemes.DEFAULT_THEME, dataStyle, borderStyle, RowPosition.MID));
-		b.append(getNewRow().toString(TableThemes.DEFAULT_THEME, dataStyle, borderStyle, RowPosition.MID));
-		b.append(getNewRow().toString(TableThemes.DEFAULT_THEME, dataStyle, borderStyle, RowPosition.MID));
-		b.append(getNewRow().toString(TableThemes.DEFAULT_THEME, dataStyle, borderStyle, RowPosition.BOTTOM ));
+		summary += Ansi.UnSaveCursor;
+		summary += Ansi.CursorUp;
+		summary += Ansi.EraseLine;
+		summary += Ansi.CursorUp;
+		summary += Ansi.EraseLine;
 
-		System.out.println(b.toString());
-
-
+		System.out.println(summary);
+	}
+	
+	@Test
+	public void simpleTest3() {
+		AnsiStringBuilder ansiString = new AnsiStringBuilder();
+		ansiString.bgBlack().white();
+		ansiString.append(TabelTest.getRandomString());
+		ansiString.fastBlink();
+		ansiString.append('\n');
+		ansiString.append(TabelTest.getRandomString());
+		ansiString.append('\n');
+		ansiString.append(TabelTest.getRandomString());
+		System.out.println(ansiString);
 	}
 
 }

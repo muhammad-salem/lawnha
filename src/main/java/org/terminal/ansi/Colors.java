@@ -62,7 +62,7 @@ public interface Colors extends AnsiBase{
 	}
 	
 	default String colorbg(String string, int n) {
-		return colorbg(n) + string + DefaultColor;
+		return colorbg(n) + string + DefaultColorbg;
 	}
 	
 	default String color(String string, int r, int g, int b) {
@@ -70,7 +70,7 @@ public interface Colors extends AnsiBase{
 	}
 	
 	default String colorbg(String string, int r, int g, int b) {
-		return colorbg(r, g, b) + string + DefaultColor;
+		return colorbg(r, g, b) + string + DefaultColorbg;
 	}
 	
 	default String color24(String string, int r, int g, int b) {
@@ -78,7 +78,7 @@ public interface Colors extends AnsiBase{
 	}
 	
 	default String colorbg24(String string, int r, int g, int b) {
-		return colorbg24(r, g, b) + string + DefaultColor;
+		return colorbg24(r, g, b) + string + DefaultColorbg;
 	}
 	
 	default String color(String string, Color color) {
@@ -86,7 +86,7 @@ public interface Colors extends AnsiBase{
 	}
 	
 	default String colorbg(String string, Color colorbg) {
-		return colorbg.bgColorString() + string + DefaultColor;
+		return colorbg.bgColorString() + string + DefaultColorbg;
 	}
 	
 	default String colorLite(String string, Color color) {
@@ -94,7 +94,7 @@ public interface Colors extends AnsiBase{
 	}
 	
 	default String colorLitebg(String string, Color colorbg) {
-		return colorbg.bgLiteString() + string + DefaultColor;
+		return colorbg.bgLiteString() + string + DefaultColorbg;
 	}
 	
 	

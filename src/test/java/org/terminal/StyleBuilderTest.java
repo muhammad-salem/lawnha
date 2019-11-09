@@ -11,7 +11,7 @@ public class StyleBuilderTest {
 		builder.bgBlue();
 		builder.color(150);
 		builder.fastBlink();
-		System.out.println(builder.build(AnsiTest.getRandomString()));
+		System.out.println(builder.build(TabelTest.getRandomString()));
 	}
 
 }

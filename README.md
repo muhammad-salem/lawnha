@@ -1,4 +1,4 @@
-# ANSI/VT100 for Java (0.1.98)
+# ANSI/VT100 for Java (0.1.99)
 
 
 Control Sequences (defined by ANSI X3.64-1979)
@@ -16,57 +16,61 @@ parameter is used.  Many functions treat a parameter of 0 as if it were 1.
 
 Add ansi code to your output
 ----------------------------
+```java
+	String summary = "";
+	summary += Ansi.EraseLine + "\n";
+	summary += Ansi.EraseLine + "\n";
+	summary += Ansi.EraseLine + Ansi.SaveCursor;
+
+	summary += "\r ";
+	summary += Ansi.Yellow;
+	summary += "Hello ";
+	summary += Ansi.Reset;
+
+	summary += Ansi.Blue;
+	summary += "World!";
+	summary += Ansi.Reset;
+
+	summary += Ansi.Green;
+	summary += "\ttry ANSI code with Java";
+	summary += Ansi.Reset;
+
+	summary += Ansi.UnSaveCursor;
+	summary += Ansi.CursorUp;
+	summary += Ansi.EraseLine;
+	summary += Ansi.CursorUp;
+	summary += Ansi.EraseLine;
+
+	System.out.println(summary);
+```
 
 ```java
-	public static void main(String ... args) throws Exception {
-		  String summery = "";
-		  Ansi ansi = new Ansi(){};
-		  summery += ansi.Yellow("HelloY ");
-		  summery += ansi.Blue("WorldB ");
-		  summery += ansi.Greenbg("\ttry green background");
-		  System.out.println(summery);
-	}
+	AnsiStringBuilder ansiString = new AnsiStringBuilder();
+	ansiString.bgBlack().white();
+	ansiString.append(TabelTest.getRandomString());
+	ansiString.fastBlink();
+	ansiString.append('\n');
+	ansiString.append(TabelTest.getRandomString());
+	ansiString.append('\n');
+	ansiString.append(TabelTest.getRandomString());
+	System.out.println(ansiString);
 ```
 
-
-![screenshot](https://github.com/salemebo/Java-Terminal-ANSI-VT100/blob/master/img/img01.png)
-
-print footer from as of 3-line
-
-```java 
-  String summery = "";
-  summery += ANSI.EraseLine + "\n" ;
-  summery += ANSI.EraseLine + "\n" ;
-  summery += ANSI.EraseLine + ANSI.SaveCursor;
-
-
-  summery += "\r ";
-  summery += Ansi.Yellow;
-  summery += "Hello ";
-  summery += Ansi.ResetAllAttributes;
-
-  summery += Ansi.Blue;
-  summery += "World!";
-  summery += Ansi.ResetAllAttributes;
-
-  summery += Ansi.Green;
-  summery += "\t Tray ANSI code in Java";
-  summery += Ansi.ResetAllAttributes;
-
-
-  summery += Ansi.UnsaveCursor;
-  summery += Ansi.CursorUp;
-  summery += Ansi.EraseLine;
-  summery += Ansi.CursorUp;
-  summery += Ansi.EraseLine;
-  
-  System.out.print(summery);
-
+```java
+	String summary = "";
+	Ansi ansi = new Ansi() {};
+	summary += ansi.yellow("Hello ");
+	summary += ansi.blue("World ");
+	summary += ansi.greenbg("\ttry green background");
+	System.out.println(summary);
 ```
-![screenshot](https://github.com/salemebo/Java-Terminal-ANSI-VT100/blob/master/img/img02.png)
 
-![screenshot](https://github.com/salemebo/Java-Terminal-ANSI-VT100/blob/master/img/img03.png)
-![screenshot](https://github.com/salemebo/Java-Terminal-ANSI-VT100/blob/master/img/img04.png)
-![screenshot](https://github.com/salemebo/Java-Terminal-ANSI-VT100/blob/master/img/img05.png)
+```java
+	StyleBuilder builder = new StyleBuilder();
+	builder.bgBlue();
+	builder.color(150);
+	builder.fastBlink();
+	System.out.println(builder.build(TabelTest.getRandomString()));
+```
 
-
+![screenshot](img/img01.png)
