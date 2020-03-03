@@ -1,6 +1,6 @@
 package org.terminal.displaymanager.print;
 
-import org.terminal.displaymanager.coordinate.Pos;
+import org.terminal.displaymanager.coordinate.Point;
 
 /**
  * hold text / string, should have length limit. 
@@ -20,9 +20,8 @@ public interface Text {
 	void setPositionX(int x);
 	void setPositionY(int y);
 	
-	void setPosition (Pos position );
-	Pos getPosition ();
-	
+	void setPosition (Point position );
+	Point getPosition ();
 	
 	void setTextRender ( TextRender textRender);
 }

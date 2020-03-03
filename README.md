@@ -73,4 +73,5 @@ Add ansi code to your output
 	System.out.println(builder.build(TabelTest.getRandomString()));
 ```
 
-![screenshot](img/img01.png)
+![screenshot](img/img01.gif)
+![screenshot](img/img02.png)

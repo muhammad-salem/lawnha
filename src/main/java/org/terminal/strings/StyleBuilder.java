@@ -142,11 +142,6 @@ public class StyleBuilder implements ColorAndStyle{
 		clearStyle();
 		effect = null;
 		revers = null;
-		super.finalize();
 	}
-
-
-	
-	
 	
 }

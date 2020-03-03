@@ -2,11 +2,17 @@ package org.terminal.displaymanager.coordinate;
 
 public interface Position {
 	
-	Position moveBy ( Pos pos ) ;
-	Position moveBy ( int x, int y );
+	void moveBy ( Point point ) ;
+	void moveBy ( int x, int y );
 	
-	Position moveXBy ( int x );
-	Position moveYBy ( int y );
+	void moveByX ( int x );
+	void moveByY ( int y );
 	
+	int getX();
+	int getY();
+	
+	void moveTo  ( Point point );
+	void moveToX ( int x );
+	void moveToY ( int y );
 	
 }

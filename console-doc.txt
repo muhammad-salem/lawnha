@@ -1,0 +1,4 @@
+https://console.spec.whatwg.org/
+https://developer.mozilla.org/en-US/docs/Web/API/Console
+https://developers.google.com/web/tools/chrome-devtools/console/api
+https://developers.google.com/web/tools/chrome-devtools/console/reference

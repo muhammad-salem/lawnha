@@ -2,7 +2,7 @@ package org.terminal.displaymanager;
 
 import java.io.OutputStream;
 
-import org.terminal.displaymanager.coordinate.Pos;
+import org.terminal.displaymanager.coordinate.Point;
 
 public interface UIManager extends Runnable{
 	
@@ -25,8 +25,8 @@ public interface UIManager extends Runnable{
 	 */
 	OutputStream asOutputStream ();
 	
-	void setCursorPostion (Pos pos);
-	Pos getCursorPostion  ();
+	void setCursorPostion (Point pos);
+	Point getCursorPostion  ();
 	
 	
 }
