@@ -3,8 +3,8 @@
  */
 package org.terminal;
 
-import org.terminal.console.api.Console;
+import org.terminal.console.api.ConsoleImpl;
 
 public final class Window {
-    public static final Console console = null;
+    public static final ConsoleImpl console = null;
 }

@@ -93,35 +93,35 @@ public interface Styles extends Colors {
 	String IdeogramIdeogramStressMarking = Style.IdeogramIdeogramStressMarking.toString();
 	String IdeogramAttributesOff = Style.IdeogramAttributesOff.toString();
 
-	default String ClearAllSpecialAttributes() {
+	default String clearAllSpecialAttributes() {
 		return Reset;
 	}
 
-	default String Bold(String string) {
+	default String bold(String string) {
 		return Bold + string + BoldOff;
 	}
 
-	default String Dim(String string) {
+	default String dim(String string) {
 		return Dim + string + Intensity;
 	}
 
-	default String Italic(String string) {
+	default String italic(String string) {
 		return Italic + string + ItalicOff;
 	}
 
-	default String Underscore(String string) {
+	default String underscore(String string) {
 		return Underline + string + UnderscoreOff;
 	}
 
-	default String Blink(String string) {
+	default String blink(String string) {
 		return Blink + string + BlinkOff;
 	}
 
-	default String BlinkSlow(String string) {
+	default String blinkSlow(String string) {
 		return Blink + string + BlinkOff;
 	}
 
-	default String BlinkFast(String string) {
+	default String blinkFast(String string) {
 		return BlinkRapid + string + BlinkOff;
 	}
 

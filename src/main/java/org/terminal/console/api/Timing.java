@@ -17,7 +17,7 @@ public interface Timing {
     void time(String label);
     default void time(){
         time("default");
-    };
+    }
     /**
     * 
     *
@@ -46,7 +46,7 @@ public interface Timing {
     void timeLog(String label, Object ...data);
     default void timeLog(Object ...data){
     	timeLog("default", data);
-    };
+    }
     
     /**
     * 
@@ -61,6 +61,6 @@ public interface Timing {
     void timeEnd(String label);
     default void timeEnd(){
     	timeEnd("default");
-    };
+    }
 
 }

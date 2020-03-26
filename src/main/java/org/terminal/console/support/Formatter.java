@@ -1,5 +1,7 @@
 package org.terminal.console.support;
 
+import java.util.List;
+
 public interface Formatter {
-    void format(Object ...args);
+	List<String> format(Object ...args);
 }
