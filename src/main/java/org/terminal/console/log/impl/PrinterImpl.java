@@ -32,7 +32,7 @@ public class PrinterImpl implements Printer, AdvancedPrinter, Colors, ErasingTex
 	}
 
 	@Override
-	public void log(Level level, Class<?> classname, String title, String message) {
+	public void print(Level level, Class<?> classname, String title, String message) {
 		printStream.print(EraseEndofLine);
 		printStream.print(blueLight( "( " + hhmmss() + " )"));
 		printStream.print(' ');
