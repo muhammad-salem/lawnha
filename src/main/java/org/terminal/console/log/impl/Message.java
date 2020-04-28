@@ -1,8 +1,8 @@
-package org.terminal.console.log.model;
+package org.terminal.console.log.impl;
 
 import org.terminal.console.log.Level;
 
-public class LogMessage {
+public class Message implements org.terminal.console.log.api.Message {
 
 	private Level level;
 	private Class<?> classname;
@@ -10,45 +10,46 @@ public class LogMessage {
 	private String message;
 
 
-	public LogMessage(Level level, String message) {
+	public Message(Level level, String message) {
 		this.level = level;
 		this.message = message;
 	}
 	
-	public LogMessage(Level level, String title, String message) {
+	public Message(Level level, String title, String message) {
 		this.level = level;
 		this.title = title;
 		this.message = message;
 	}
 	
-	public LogMessage(Level level, Class<?> classname, String message) {
+	public Message(Level level, Class<?> classname, String message) {
 		this.level = level;
 		this.classname = classname;
 		this.message = message;
 	}
 	
-	public LogMessage(Level level, Class<?> classname, String title, String message) {
+	public Message(Level level, Class<?> classname, String title, String message) {
 		this.level = level;
 		this.classname = classname;
 		this.title = title;
 		this.message = message;
 	}
 	
-	
-	
-
+	@Override
 	public Level getLevel() {
 		return level;
 	}
 
+	@Override
 	public Class<?> getClassname() {
 		return classname;
 	}
 
+	@Override
 	public String getTitle() {
 		return title;
 	}
 
+	@Override
 	public String getMessage() {
 		return message;
 	}
