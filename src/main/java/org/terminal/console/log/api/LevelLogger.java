@@ -7,4 +7,6 @@ public interface LevelLogger extends Logger {
 	Level getLevel();
 	void setLevel(Level level);
 	boolean isAllowed(Level level);
+	public Printer getPrinter();
+	
 }

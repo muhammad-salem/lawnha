@@ -36,6 +36,7 @@ public class LevelLoggerImpl  implements LevelLogger {
 		this.level = level;
 	}
 	
+	@Override
 	public Printer getPrinter() {
 		return printer;
 	}
