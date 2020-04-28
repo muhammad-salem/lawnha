@@ -3,11 +3,11 @@ package org.terminal.console.log.impl;
 import java.io.PrintStream;
 
 import org.terminal.console.log.Level;
-import org.terminal.console.log.api.Logger;
+import org.terminal.console.log.api.LevelLogger;
 import org.terminal.console.log.api.Printer;
 
 
-public class LevelLoggerImpl  implements Logger {
+public class LevelLoggerImpl  implements LevelLogger {
 
 	private Level level;
 	private Printer printer; 
@@ -26,19 +26,25 @@ public class LevelLoggerImpl  implements Logger {
 		this.printer = printer;
 	}
 	
+	@Override
 	public Level getLevel() {
 		return level;
 	}
+	
+	@Override
 	public void setLevel(Level level) {
 		this.level = level;
 	}
+	
 	public Printer getPrinter() {
 		return printer;
 	}
+	
 	public void setPrinter(Printer printer) {
 		this.printer = printer;
 	}
 	
+	@Override
 	public boolean isAllowed(Level level) {
 		return level.ordinal() <= this.level.ordinal();
 	}

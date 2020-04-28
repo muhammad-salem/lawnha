@@ -1,4 +1,4 @@
-# ANSI/VT100 for Java (0.1.99)
+# ANSI/VT100 for Java (0.2.1)
 
 
 Control Sequences (defined by ANSI X3.64-1979)
@@ -14,8 +14,8 @@ are not allowed.  If no digits precede the final character, the default
 parameter is used.  Many functions treat a parameter of 0 as if it were 1.
 
 
-Add ansi code to your output
-----------------------------
+support your java output with ANSI code
+---------------------------------------
 ```java
 	String summary = "";
 	summary += Ansi.EraseLine + "\n";
@@ -75,3 +75,20 @@ Add ansi code to your output
 
 ![screenshot](img/img01.gif)
 ![screenshot](img/img02.png)
+
+
+implements logger lib 
+----------------------------
+
+```java
+	LevelLoggerImpl logger = new LevelLoggerImpl(Level.info);
+	//logger.setLevel(Level.info);
+	logger.assertions(Boolean assertions, String message);
+	logger.debug(String message);
+	logger.error(String title, String message);
+	logger.trace(Class<?> classname, String title, String message))
+	logger.info(String message);
+	logger.error(String message);
+	logger.warn(String message);
+	logger.log(String message);
+```

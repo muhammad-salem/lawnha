@@ -4,17 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ansi</groupId>
 	<artifactId>lawnha</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.1</version>
 	<name>lawnha</name>
 	<description>ANSI/VT100 for Java, ansi code to your output</description>
 	<url>https://github.com/salemebo/ansi</url>
 	<scm>
 		<tag>lawnha,ansi,VT100,ANSI,لَونهَا</tag>
 	</scm>
-	<properties>
-		<jansi-native-version>1.8</jansi-native-version>
-	</properties>
-	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
