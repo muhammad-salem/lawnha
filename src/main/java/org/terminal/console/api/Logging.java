@@ -42,16 +42,22 @@ public interface Logging {
 
     /**
     * Perform Logger("debug", data).
+    * @param message A Java string containing zero or more substitution strings
+    * @param data Java objects with which to replace substitution strings within message.
     */
     void debug(String message, Object... data);
     
     /**
     * Perform Logger("error", data).
+    * @param message A Java string containing zero or more substitution strings
+    * @param data Java objects with which to replace substitution strings within message.
     */
     void error(String message, Object... data);
     
     /**
      * Perform Logger("warn", data).
+     * @param message A Java string containing zero or more substitution strings
+     * @param data Java objects with which to replace substitution strings within message.
      */
     void warn(String message, Object... data);
     
@@ -62,26 +68,33 @@ public interface Logging {
      * Optionally, let formattedData be the result of Formatter(data), and incorporate
      * formattedData as a label for trace.
      * Perform Printer("trace", « trace »).
+     * @param message A Java string containing zero or more substitution strings
      */
     void trace(String message);
     
     /**
     * Perform Logger("info", data).
+    * @param message A Java string containing zero or more substitution strings
+    * @param data Java objects with which to replace substitution strings within message.
     */
     void info(String message, Object... data);
     
     /**
     * Perform Logger("log", data).
+    * @param message A Java string containing zero or more substitution strings
+    * @param data Java objects with which to replace substitution strings within message.
     */
     void log(String message, Object... data);
     
 
     /**
     * 
-    * 
-    * Try to construct a table with the columns of the properties of tabularData 
-    * (or use properties) and rows of tabularData and log it with a logLevel of "log".
-    * Fall back to just logging the argument if it can’t be parsed as tabular.
+    * Try to construct a table with the columns of the properties of tableData 
+    * (or use properties) and rows of tableData and log it with a logLevel of "log".
+    * Fall back to just logging the argument if it can’t be parsed as table.
+    * @param <T> This is the type parameter
+    * @param data to be printed
+    * @param properties Stream of String as header map to object properties
     */
     <T> void table(T data, Stream<String> properties);
     default <T>  void table(T data){
@@ -96,6 +109,8 @@ public interface Logging {
      * contents of child nodes.
      * Let object be item with generic Java object formatting applied.
      * Perform Printer("dir", « object », options).
+     * @param item Object
+     * @param options Object
      */
     void dir(Object item, Object options);
     
@@ -110,6 +125,7 @@ public interface Logging {
     *        otherwise let converted be item with optimally useful formatting applied.
     *     Append converted to finalList.
     * Perform Logger("dirxml", finalList).
+    * @param data xml object represintation
     */
     void dirxml(Object... data);
 }

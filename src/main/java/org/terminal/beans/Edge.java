@@ -12,9 +12,6 @@ package org.terminal.beans;
  * 		Bottom
  * </pre>
  * 
- * @param map
- * @param chars
- * @throws Exception 
  */
 public enum Edge {
 	TopLeft, Top, TopMid, TopRight, 

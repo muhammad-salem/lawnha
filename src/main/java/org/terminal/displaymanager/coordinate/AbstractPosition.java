@@ -34,10 +34,9 @@ public abstract class AbstractPosition implements Position {
 	}
 	
 	/**
-	 * it o
-	 * @param p1 {1} the first pos
-	 * @param p2 {2} the second pos
-	 * @return only { 1, 2 } as index for this positions 
+	 * compare first point
+	 * @param point {x, y} the first pos
+	 * @return boolean
 	 */
 	public boolean isFirst ( Point point ) {
 		if (this.point.getX() < point.getX()) return true;

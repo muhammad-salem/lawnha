@@ -43,7 +43,6 @@ public interface EdgeTheme {
 	
 	/**
 	 * 
-	 * <pre>
 	 * 		Top
 	 *     ┌0────1──────2┬───1──────3┐
 	 *     │4           4│          4│
@@ -52,21 +51,22 @@ public interface EdgeTheme {
 	 *     └8────1──────7┴───1──────6┘
 	 * 		Bottom
 	 *
-	 *  0 -> TopLeft, 		
-	 *  1 -> Top, Bottom, Mid,
-	 *  2 -> TopMid,		
-	 *  3 -> TopRight,
-	 *  4 -> Right, Left, Middle
-	 *  5 -> RightMid,
-	 *  6 -> BottomRight, 	
-	 *  7 -> BottomMid,
-	 *  8 -> BottomLeft,
-	 *  9 -> LeftMid,
-	 * 10 -> MidMid.
-	 * </pre>
-	 * @param map
-	 * @param chars
-	 * @throws Exception 
+	 *  0 : TopLeft, 		
+	 *  1 : Top, Bottom, Mid,
+	 *  2 : TopMid,		
+	 *  3 : TopRight,
+	 *  4 : Right, Left, Middle
+	 *  5 : RightMid,
+	 *  6 : BottomRight, 	
+	 *  7 : BottomMid,
+	 *  8 : BottomLeft,
+	 *  9 : LeftMid,
+	 * 10 : MidMid.
+	 *
+	 * @param map map marker as table decerator '┼'
+	 * @param chars as border '────'
+	 * @throws NullPointerException if chars is null
+	 * @throws Exception if chars length != 14
 	 */
 	public static void fillMap(Map<Edge, Character> map, char[] chars) throws NullPointerException, Exception {
 		if(chars == null) throw new NullPointerException("chars == null");

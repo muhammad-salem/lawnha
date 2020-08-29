@@ -13,6 +13,7 @@ public interface Timing {
     *    that a timer with label label has already been started.
     * - Otherwise, set the value of the entry with key label in the associated
     *     timer table to the current time.
+    * @param label string 
     */
     void time(String label);
     default void time(){
@@ -41,7 +42,9 @@ public interface Timing {
     * // Perhaps some fetch()'s here filling the app with data
     * // ...
     * console.timeEnd("MyTimer");
-    * </code>
+    * </code> 
+    * @param label string 
+    * @param data array of Objects
     */
     void timeLog(String label, Object ...data);
     default void timeLog(Object ...data){
@@ -49,14 +52,14 @@ public interface Timing {
     }
     
     /**
-    * 
-    *
     * - Let timerTable be the associated timer table.
     * - Let startTime be timerTable[label].
     * - Remove timerTable[label].
     * - Let duration be a string representing the difference between the current time and startTime, in an implementation-defined format.
     * - Let concat be the concatenation of label, U+003A (:), U+0020 SPACE, and duration.
     * - Perform Printer("timeEnd", « concat »).
+    * 
+    * @param label string
     */
     void timeEnd(String label);
     default void timeEnd(){

@@ -22,6 +22,8 @@ public interface Grouping {
     * - Optionally, if the environment supports interactive groups, group should be expanded by default.
     * - Perform Printer("group", « group »).
     * - Push group onto the appropriate group stack.
+    *
+    * @param data array of objects
     */
     void group(Object ...data);
     void group(String label);
@@ -39,6 +41,8 @@ public interface Grouping {
     * - Optionally, if the environment supports interactive groups, group should be collapsed by default.
     * - Perform Printer("groupCollapsed", « group »).
     * - Push group onto the appropriate group stack.
+    *
+    * @param data array of objects
     */
     void groupCollapsed(Object ...data);
     void groupCollapsed(String label);

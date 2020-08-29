@@ -257,7 +257,7 @@ public class Table<T> {
 	}
 
 	/**
-	 * @param builder
+	 * @param builder StringBuilder
 	 */
 	protected void printHead(StringBuilder builder) {
 		if (head.isEmpty())
@@ -331,7 +331,7 @@ public class Table<T> {
 	}
 
 	/**
-	 * @param builder
+	 * @param builder StringBuilder
 	 */
 	protected void printHeadBorder(StringBuilder builder) {
 		if (tableTheme.topLeft() == 0 & tableTheme.top() == 0 & tableTheme.topMid() == 0 & tableTheme.topRight() == 0)
@@ -352,7 +352,7 @@ public class Table<T> {
 	}
 
 	/**
-	 * @param builder
+	 * @param builder StringBuilder
 	 */
 	protected void printMidLine(StringBuilder builder) {
 		if (tableTheme.leftMid() == 0 & tableTheme.mid() == 0 & tableTheme.midMid() == 0 & tableTheme.rightMid() == 0)
@@ -374,7 +374,7 @@ public class Table<T> {
 	}
 
 	/**
-	 * @param builder
+	 * @param builder StringBuilder
 	 */
 	protected void printFootBorder(StringBuilder builder) {
 		if (tableTheme.bottomLeft() == 0 & tableTheme.bottom() == 0 & tableTheme.bottomMid() == 0

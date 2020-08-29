@@ -9,10 +9,8 @@ import org.terminal.displaymanager.side.UpperSide;
 /**
  * Page element hold the 5 sides in the terminal 
  * up, bottom, left, right, center.
- * <br/>
  * 
  * @author salem
- *
  */
 public interface Page {
 	

@@ -14,6 +14,9 @@ public interface Logger {
     * 5- If first does not contain any format specifiers, perform Printer(logLevel, args).
     * 6- Otherwise, perform Printer(logLevel, Formatter(args)).
     * 7- Return undefined.
+    *
+    * @param logLevel String
+    * @param args array of Objects
     */
     void log(String logLevel, Object ...args);
     

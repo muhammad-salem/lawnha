@@ -33,6 +33,7 @@ public interface Counting {
     *     - Let message be a string without any formatting specifiers 
     *     indicating generically that the given label does not have an associated count.
     *     - Perform Logger("countReset", « message »);
+    * @param label string name
     */
     void countReset(String label);
     default void countReset(){

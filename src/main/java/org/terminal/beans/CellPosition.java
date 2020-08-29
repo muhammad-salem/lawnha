@@ -3,7 +3,7 @@ package org.terminal.beans;
 
 /**
  * 
- * <pre>
+ *
  * 		Top
  *     ┌0────1──────2┬───1──────3┐
  *     │4           4│          4│
@@ -12,19 +12,19 @@ package org.terminal.beans;
  *     └8────1──────7┴───1──────6┘
  * 		Bottom
  *
- *  0 -> TopLeft, 		
- *  1 -> Top, Bottom, Mid,
- *  2 -> TopMid,		
- *  3 -> TopRight,
- *  4 -> Right, Left, Middle
- *  5 -> RightMid,
- *  6 -> BottomRight, 	
- *  7 -> BottomMid,
- *  8 -> BottomLeft,
- *  9 -> LeftMid,
- * 10 -> MidMid.
-	 * 
- * <pre>
+ *  0 : TopLeft, 		
+ *  1 : Top, Bottom, Mid,
+ *  2 : TopMid,		
+ *  3 : TopRight,
+ *  4 : Right, Left, Middle
+ *  5 : RightMid,
+ *  6 : BottomRight, 	
+ *  7 : BottomMid,
+ *  8 : BottomLeft,
+ *  9 : LeftMid,
+ * 10 : MidMid.
+ * 
+ * 
  * ┌0──────1──────2┬─────1──────2┬──────1───────3┐
  * │4  TOP_LEFT   4│  TOP_MID   4│  TOP_RIGHT   4│
  * ├9──────1─────10┼─────1─────10┼──────1───────5┤
@@ -32,11 +32,8 @@ package org.terminal.beans;
  * ├9──────1─────10┼─────1─────10┼──────1───────5┤
  * │4 BOTTOM_LEFT 4│ BOTTOM_MID 4│ BOTTOM_RIGHT 4│
  * └8──────1──────7┴────1───────7┴──────1───────6┘
- * </pre>
  * 
- * @param tableTheme
- * @param borderStyle
- * @return
+ * 
  */
 public enum CellPosition {
 	

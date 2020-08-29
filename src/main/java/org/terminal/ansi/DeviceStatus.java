@@ -18,7 +18,7 @@ public interface DeviceStatus extends AnsiBase{
 	 * to Query Device Code request.
 	 * 
 	 * @param code to create code similar to  the one gnerated by the device.
-	 * @return
+	 * @return the code as string format
 	 */
     default String ReportDeviceCode(int code){return  "\u001B["+code+"0c";}
     /**

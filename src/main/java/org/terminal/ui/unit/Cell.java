@@ -77,8 +77,6 @@ public class Cell<R> {
 		return getArray()[index];
 	}
 	
-	
-	
 	public Cell<R>  cloneMetaData() {
 		Cell<R> cell = new Cell<>();
 		cell.hight = this.hight;
@@ -89,16 +87,16 @@ public class Cell<R> {
 	}
 	
 	/**
-	 * <pre>
+	 * 
 	 * ┌───────┬───────┬───────┐
 	 * ├───────┼───────┼───────┤
 	 * ├───────┼───────┼───────┤
 	 * └───────┴───────┴───────┘
-	 * </pre>
 	 * 
-	 * @param tableTheme
-	 * @param borderStyle
-	 * @return
+	 * @param theme TableThemes
+	 * @param style StyleBuilder
+	 * @param position CellPosition
+	 * @return only topBorder of a table
 	 */
 	
 	public String topBorder(TableThemes theme, StyleBuilder style, CellPosition position){
@@ -124,6 +122,7 @@ public class Cell<R> {
 			builder.append(right);
 		}
 	}
+
 	public void bottomBorder(StringBuilder builder, TableThemes theme, CellPosition position){
 		char left = position.bottomLeft(theme);
 		char mid = theme.mid();
@@ -134,6 +133,7 @@ public class Cell<R> {
 			border(builder, left, mid);
 		}
 	}
+
 	protected void border(StringBuilder builder, char left, char mid, char right){
 		border(builder, left, mid);
 		if(right != 0) {
@@ -183,7 +183,8 @@ public class Cell<R> {
 	
 	protected void data(StringBuilder builder, StyleBuilder dataStyle, StyleBuilder borderStyle, char middle ){
 		data(builder, dataStyle, borderStyle, middle, 0);
-	}	
+	}
+
 	protected void data(StringBuilder builder, StyleBuilder dataStyle, StyleBuilder borderStyle, char middle, int index ){
 		
 		String print = dataIndex(index);
@@ -209,10 +210,6 @@ public class Cell<R> {
 		for (int i = 0; i < fill_empty_char + reminder + padding; i++) {
 			builder.append(' ');
 		}
-		
-		//System.out.printf("lengh: %d, reminder: %d, width: %d, datalength:%d padding: %d, stringLength: %d\n", fill_empty_char, reminder, width, dataLengthConsiderHight(), padding, print.length());
-		
 	}
-	
 	
 }

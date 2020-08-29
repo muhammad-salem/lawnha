@@ -19,6 +19,9 @@ public interface CursorControl extends AnsiBase{
 	 * the cursor will move to the home position, 
 	 * at the upper left of the screen. 
 	 * "\u001B[{ROW};{COLUMN}H"
+     * @param ROW, int COLUMN
+     * @param COLUMN int
+     * @return cursor as position string 
 	 */
     default String cursor(int ROW, int COLUMN) { 
     	return escape_sequences + ROW + ';' + COLUMN + 'H';
@@ -30,7 +33,7 @@ public interface CursorControl extends AnsiBase{
     /**
      * moves cursor to column n
      * @param column number of column
-     * @return 
+     * @return String
      */
     default String cursorColumn(int column) { return escape_sequences + column + 'G'; }
     /**
@@ -54,8 +57,8 @@ public interface CursorControl extends AnsiBase{
     final String CursorDown = escape_sequences + "1B";
     /**
      * Moves the cursor down by COUNT rows; the default count is 1.
-     * @param count
-     * @return
+     * @param count int
+     * @return String
      */
     default String cursorDown(int count) {
     	if (count <= 0) {
@@ -67,24 +70,24 @@ public interface CursorControl extends AnsiBase{
     final String CursorForward = escape_sequences + "1C";
     /**
      * Moves the cursor forward by COUNT columns; the default count is 1.
-     * @param count
-     * @return
+     * @param count int
+     * @return String
      */
     default String cursorForward(int count){ return escape_sequences + count + 'C';}
     
     final String  CursorBackward = escape_sequences + "1D";
     /**
      * Moves the cursor backward by COUNT columns; the default count is 1
-     * @param count
-     * @return
+     * @param count int
+     * @return String
      */
     default String cursorBackward(int count){ return escape_sequences + count + 'D';}
     
     /**
      * Identical to Cursor Home.
-     * @param row
-     * @param column
-     * @return
+     * @param row int
+     * @param column int
+     * @return String
      */
     default String forceCursorPosition(int row, int column){return escape_sequences+row+';'+column+'f';}
     
@@ -92,8 +95,8 @@ public interface CursorControl extends AnsiBase{
     final String CursorNextLine = escape_sequences + "1E";
     /**
      * moves cursor to beginning of line n lines down
-     * @param count
-     * @return
+     * @param count int
+     * @return String
      */
     default String cursorNextLine(int count){ return escape_sequences + count + 'E';}
     default String newln(int count) {return chars('\n', count);}
@@ -102,8 +105,8 @@ public interface CursorControl extends AnsiBase{
     final String CursorPrevLine = escape_sequences + "1F";
     /**
      *  moves cursor to beginning of line n lines down
-     * @param count
-     * @return
+     * @param count int
+     * @return String
      */
     default String cursorPrevLine(int count){ return escape_sequences + count + 'F';}
     
@@ -126,7 +129,7 @@ public interface CursorControl extends AnsiBase{
     
     /**
      * do nothing 
-     * @param string
+     * @param string String
      * @return string
      */
     default String cursorLineLast(String string) {
@@ -146,20 +149,18 @@ public interface CursorControl extends AnsiBase{
     /**
      * will check for number on '\n' in code 
      * if the string terminated by new line... will remove 
-     * @param string
-     * @return
+     * @param string String
+     * @return String
      */
     default String cursorFirst(final String string) {
     	return cursorFirst(string, 0); 
     }
     
-    
-    
     /**
      * Previous 
-     * @param string
+     * @param string String
      * @param previousCharLength length of the written char in the current line
-     * @return
+     * @return String
      */
     default String cursorFirst(final String string, int previousCharLength) {
     	String[] lines = string.split("\n");

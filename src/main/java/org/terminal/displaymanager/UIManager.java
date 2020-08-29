@@ -21,7 +21,7 @@ public interface UIManager extends Runnable{
 	/**
 	 * get all the rendering process as outputstream
 	 * simple render to the center page;
-	 * @return 
+	 * @return this UIManager as OutputStream
 	 */
 	OutputStream asOutputStream ();
 	

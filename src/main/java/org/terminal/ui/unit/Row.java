@@ -49,13 +49,7 @@ public class Row<R> {
 		return builder.toString();
 	}
 
-	/**
-	 * @param builder
-	 * @param dataStyle
-	 * @param borderStyle
-	 * @param position
-	 * @param theme
-	 */
+
 	protected void cellsRow(StringBuilder builder, StyleBuilder dataStyle,
 			StyleBuilder borderStyle, RowPosition position, TableThemes theme) {
 		builder.append(cells.get(0).topBorder(theme, borderStyle, position.first()));
@@ -81,13 +75,6 @@ public class Row<R> {
 		}
 	}
 
-	/**
-	 * @param theme
-	 * @param dataStyle
-	 * @param borderStyle
-	 * @param position
-	 * @param builder
-	 */
 	protected void twoCellsRow(StringBuilder builder, StyleBuilder dataStyle,
 			StyleBuilder borderStyle, RowPosition position, TableThemes theme) {
 		builder.append(cells.get(0).topBorder(theme, borderStyle, CellPosition.TWO_TOP_LEFT));
@@ -103,13 +90,6 @@ public class Row<R> {
 		}
 	}
 
-	/**
-	 * @param builder
-	 * @param dataStyle
-	 * @param borderStyle
-	 * @param theme
-	 * @param position
-	 */
 	protected void oneCellasRow(StringBuilder builder, StyleBuilder dataStyle,
 			StyleBuilder borderStyle, TableThemes theme ) {
 		builder.append(cells.get(0).topBorder(theme, borderStyle, CellPosition.ONE_TOP_BOTTOM_LEFT_RIGHT));
