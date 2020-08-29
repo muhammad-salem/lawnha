@@ -15,6 +15,16 @@ numbers separated by semicolons.  Leading zeros are optional, leading blanks
 are not allowed.  If no digits precede the final character, the default
 parameter is used.  Many functions treat a parameter of 0 as if it were 1.
 
+## Install
+
+```xml
+<dependency>
+  <groupId>com.github.salemebo</groupId>
+  <artifactId>lawnha</artifactId>
+  <version>0.2.1</version>
+</dependency>
+```
+
 
 support your java output with ANSI code
 ---------------------------------------
